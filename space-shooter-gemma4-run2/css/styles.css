@@ -1,4 +1,3 @@
-```css
 body, html {
     margin: 0;
     padding: 0;
@@ -12,13 +11,3 @@ canvas {
     display: block;
     cursor: none;
 }
-
-#ui-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-}
-```
