@@ -1,4 +1,3 @@
-```javascript
 class Particle {
     constructor(x, y, color, vx, vy, life) {
         this.x = x;
@@ -56,4 +55,3 @@ class ParticleSystem {
 }
 
 const particleSystem = new ParticleSystem();
-```

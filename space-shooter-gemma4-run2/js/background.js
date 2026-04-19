@@ -1,4 +1,3 @@
-```javascript
 class BackgroundLayer {
     constructor(count, speed, size, color) {
         this.stars = [];
@@ -52,4 +51,3 @@ class ParallaxBackground {
 }
 
 const background = new ParallaxBackground();
-```

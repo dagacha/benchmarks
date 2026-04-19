@@ -1,4 +1,3 @@
-```javascript
 class AudioManager {
     constructor() {
         this.ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -48,4 +47,3 @@ class AudioManager {
 }
 
 const audio = new AudioManager();
-```

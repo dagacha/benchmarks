@@ -1,4 +1,3 @@
-```javascript
 class Player {
     constructor() {
         this.x = window.innerWidth / 2;
@@ -78,4 +77,3 @@ class BulletManager {
 
 const player = new Player();
 const bulletManager = new BulletManager();
-```

@@ -1,4 +1,3 @@
-```javascript
 const CONFIG = {
     FPS: 60,
     COLORS: {
@@ -27,5 +26,4 @@ const CONFIG = {
         SPARK: { count: 5, life: 30, speed: 4 },
         INK: { count: 10, life: 60, speed: 1 }
     }
-};
-```<tool_call|>
+};|

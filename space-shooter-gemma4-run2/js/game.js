@@ -1,4 +1,3 @@
-```javascript
 class Game {
     constructor() {
         this.canvas = document.getElementById('gameCanvas');
@@ -138,4 +137,3 @@ class Game {
 window.onload = () => {
     new Game();
 };
-```

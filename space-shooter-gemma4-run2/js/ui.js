@@ -1,4 +1,3 @@
-```javascript
 class UI {
     constructor() {
         this.score = 0;
@@ -31,4 +30,3 @@ class UI {
 }
 
 const ui = new UI();
-```

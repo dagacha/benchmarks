@@ -1,4 +1,3 @@
-```javascript
 class Enemy {
     constructor(x, y, type, level) {
         this.x = x;
@@ -94,4 +93,3 @@ class EnemyManager {
 }
 
 const enemyManager = new EnemyManager();
-```
