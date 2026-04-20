@@ -1,23 +1,27 @@
 # benchmarks
 
-AI code generation benchmarks run on a **Bosgame M5** — Ryzen AI Max+ 395, 128GB unified RAM + Radeon 8060S (RDNA 3.5).
+AI code generation benchmarks run on various hardware configurations.
 
 ## Space Shooter Challenge: Octopus Invaders
 
-A head-to-head comparison of different models generating a complete vertical space shooter game from a single ~9,000 character prompt. Same machine, same llama.cpp backend, same prompt.
+A head-to-head comparison of different models generating a complete vertical space shooter game from a single ~9,000 character prompt ([octopus_invaders_prompt.md](https://github.com/sudoingX/octopus-invaders/blob/main/prompts/octopus_invaders_prompt.md)).
 
 ### Implementations
 
-| Implementation | Model | Parameters | Decode Speed | Manual Fixes | Status |
-|---------------|-------|------------|--------------|--------------|--------|
-| [`space-shooter/`](space-shooter/) | **Qwen3.6-35B-A3B** | 35B (3B active) | ~50 tok/s | 2 fixes | ✅ Complete |
-| [`space-shooter-gemma4/`](space-shooter-gemma4/) | **Gemma 4 26B-A4B** (Q4_K_XL) | 26B (4B active) | 40.1 tok/s | **0 fixes** | ✅ Complete |
-| [`space-shooter-gemma4-run2/`](space-shooter-gemma4-run2/) | **Gemma 4 26B-A4B** (MLX 4-bit) | 26B (4B active) | ~46 tok/s | TBD | 🔄 PR #3 |
+| Run | Model | Hardware | Thinking | Wall time | Decode tok/s | Lines | Fixes | Finish |
+|-----|-------|----------|----------|-----------|--------------|-------|-------|--------|
+| [`space-shooter/`](space-shooter/) | **Qwen3.6-35B-A3B** (llama.cpp GGUF) | Bosgame M5 / Radeon 8060S | on | 5m 18s | ~50 | 1,470 | 2 | stop |
+| [`space-shooter-gemma4/`](space-shooter-gemma4/) | **Gemma 4 26B-A4B** (llama.cpp GGUF) | Bosgame M5 / Radeon 8060S | on | **4m 16s** | 40.1 | 679 | **0** | stop |
+| [`space-shooter-gemma4-run2/`](space-shooter-gemma4-run2/) | **Gemma 4 26B-A4B** (MLX 4-bit) | Bosgame M5 / Radeon 8060S | on | TBD | ~46 | ~584 | TBD | stop |
+| [`space-shooter-mlx-m1max/`](space-shooter-mlx-m1max/) | **Qwen3.6-35B-A3B** (MLX 4-bit) | MacBook Pro M1 Max 64GB | on | 10m 44s | 43.7 | 2,396 | TBD | length |
+| [`space-shooter-mlx-m1max-notthinking/`](space-shooter-mlx-m1max-notthinking/) | **Qwen3.6-35B-A3B** (MLX 4-bit) | MacBook Pro M1 Max 64GB | **off** | **3m 14s** | **50.5** | 996 | TBD | stop |
 
-### Quick Comparison
+### Quick Comparison (Bosgame M5 Runs)
 
 | Metric | Qwen3.6-35B | Gemma 4 (Run 1) | Gemma 4 (Run 2) |
 |--------|-------------|-----------------|-----------------|
+| Parameters | 35B (3B active) | 26B (4B active) | 26B (4B active) |
+| Format | GGUF Q4_K_XL | GGUF Q4_K_XL | MLX 4-bit |
 | Model config | temp=0.3, reasoning=1024 | temp=1.0, temp=0.3 | temp=0.7 |
 | Wall time | 5 min 18 s | **4 min 16 s** | TBD |
 | Output tokens | 16,083 | 10,132 | ~5,755 |
@@ -56,10 +60,10 @@ A head-to-head comparison of different models generating a complete vertical spa
 
 ### Hardware Used
 
-- **Machine:** Bosgame M5 — Ryzen AI Max+ 395, 128 GB unified RAM
-- **GPU:** Radeon 8060S (RDNA 3.5) via Vulkan
-- **Backend:** llama.cpp b8672, flash-attn on, 32K context
-- **MLX (Run 2):** MLX 4-bit quantized via unsloth
+| Configuration | Machine | GPU | Backend |
+|-------------|---------|-----|---------|
+| Bosgame M5 | Ryzen AI Max+ 395, 128GB | Radeon 8060S (RDNA 3.5) | llama.cpp b8672 / MLX |
+| M1 Max | MacBook Pro, 64GB | M1 Max GPU | MLX |
 
 ### Running the Games
 
