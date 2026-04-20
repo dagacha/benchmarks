@@ -29,8 +29,8 @@ A head-to-head comparison of different models generating a complete vertical spa
 | Output tokens | 16,083 | 10,132 | ~5,755 | 2,396 | 996 |
 | Lines of code | **1,470** | 679 | ~584 | 2,396 | 996 |
 | Code files | 11 files | 10 files | 11 files | TBD | TBD |
-| ES modules | ❌ (needed fix) | ✅ (correct) | ✅ (correct) | TBD | TBD |
-| First launch | ❌ (init-order bug) | ✅ Worked | ❌ (did not work) | TBD | TBD |
+| ES modules | ❌ (needed fix) | ✅ (correct) | ✅ (correct) | ❌ (did not work) | ❌ (did not work) |
+| First launch | ❌ (init-order bug) | ✅ Worked | ❌ (did not work) | ❌ (did not work) | ❌ (did not work) |
 | Finish | stop | stop | stop | **length** (truncated) | stop |
 
 ### Features Across Implementations
