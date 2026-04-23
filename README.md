@@ -12,26 +12,27 @@ A head-to-head comparison of different models generating a complete vertical spa
 |-----|-------|----------|----------|-----------|--------------|-------|-------|--------|
 | [`space-shooter/`](space-shooter/) | **Qwen3.6-35B-A3B** (llama.cpp GGUF) | Bosgame M5 / Radeon 8060S | on | 5m 18s | ~50 | 1,470 | 2 | stop |
 | [`space-shooter-gemma4/`](space-shooter-gemma4/) | **Gemma 4 26B-A4B** (llama.cpp GGUF) | Bosgame M5 / Radeon 8060S | on | **4m 16s** | 40.1 | 679 | **0** | stop |
-| [`space-shooter-gemma4-run2/`](space-shooter-gemma4-run2/) | **Gemma 4 26B-A4B** (MLX 4-bit) | MacBook Pro M1 Max 64GB | on | TBD | ~46 | ~584 | TBD | stop |
+| [`space-shooter-gemma4-run2/`](space-shooter-gemma4-run2/) | **Gemma 4 26B-A4B** (MLX 4-bit) | MacBook Pro M1 Max 64GB | on | 2m 8s | ~46 | ~584 | TBD | stop |
+| [`space-shooter-gemma4-8bit/`](space-shooter-gemma4-8bit/) | **Gemma 4 26B-A4B** (MLX 8-bit) | Mac (MLX) | on | 2m 19s | ~42.7 | ~976 | **0** | stop |
 | [`space-shooter-mlx-m1max/`](space-shooter-mlx-m1max/) | **Qwen3.6-35B-A3B** (MLX 4-bit) | MacBook Pro M1 Max 64GB | on | 10m 44s | 43.7 | 2,396 | TBD | length |
 | [`space-shooter-mlx-m1max-notthinking/`](space-shooter-mlx-m1max-notthinking/) | **Qwen3.6-35B-A3B** (MLX 4-bit) | MacBook Pro M1 Max 64GB | **off** | **3m 14s** | **50.5** | 996 | TBD | stop |
 
 ### Quick Comparison (All Platforms)
 
-| Metric | Qwen3.6 (GGUF)<br>Bosgame M5 | Gemma 4 Run 1 (GGUF)<br>Bosgame M5 | Gemma 4 Run 2 (MLX)<br>M1 Max | Qwen3.6 (MLX)<br>M1 Max<br>thinking on | Qwen3.6 (MLX)<br>M1 Max<br>thinking off |
-|--------|---------------------------|-----------------------------------|----------------------------|--------------------------------------|--------------------------------------|
-| Parameters | 35B (3B active) | 26B (4B active) | 26B (4B active) | 35B (3B active) | 35B (3B active) |
-| Format | GGUF Q4_K_XL | GGUF Q4_K_XL | **MLX 4-bit** | MLX 4-bit | MLX 4-bit |
-| Thinking | on | on | on | on | **off** |
-| Model config | temp=0.3 | temp=1.0/0.3 | temp=0.7 | temp=0.3 | temp=0.3 |
-| Wall time | 5 min 18 s | **4 min 16 s** | TBD | 10 min 44 s | **3 min 14 s** |
-| Decode tok/s | ~50 | 40.1 | ~46 | 43.7 | **50.5** |
-| Output tokens | 16,083 | 10,132 | ~5,755 | 2,396 | 996 |
-| Lines of code | **1,470** | 679 | ~584 | 2,396 | 996 |
-| Code files | 11 files | 10 files | 11 files | TBD | TBD |
-| ES modules | ❌ (needed fix) | ✅ (correct) | ✅ (correct) | ❌ (did not work) | ❌ (did not work) |
-| First launch | ❌ (init-order bug) | ✅ Worked | ❌ (did not work) | ❌ (did not work) | ❌ (did not work) |
-| Finish | stop | stop | stop | **length** (truncated) | stop |
+| Metric | Qwen3.6 (GGUF)<br>Bosgame M5 | Gemma 4 Run 1 (GGUF)<br>Bosgame M5 | Gemma 4 Run 2 (MLX)<br>M1 Max | **Gemma 4 (MLX 8-bit)**<br>Mac | Qwen3.6 (MLX)<br>M1 Max<br>thinking on | Qwen3.6 (MLX)<br>M1 Max<br>thinking off |
+|--------|---------------------------|-----------------------------------|----------------------------|-------------------------------|--------------------------------------|--------------------------------------|
+| Parameters | 35B (3B active) | 26B (4B active) | 26B (4B active) | **26B (4B active)** | 35B (3B active) | 35B (3B active) |
+| Format | GGUF Q4_K_XL | GGUF Q4_K_XL | MLX 4-bit | **MLX 8-bit** | MLX 4-bit | MLX 4-bit |
+| Thinking | on | on | on | **on** | on | **off** |
+| Model config | temp=0.3 | temp=1.0/0.3 | temp=0.7 | **temp=0.7** | temp=0.3 | temp=0.3 |
+| Wall time | 5 min 18 s | **4 min 16 s** | 2m 8s | **2m 19s** | 10 min 44 s | **3 min 14 s** |
+| Decode tok/s | ~50 | 40.1 | ~46 | **~42.7** | 43.7 | **50.5** |
+| Output tokens | 16,083 | 10,132 | ~5,755 | **5,751** | 2,396 | 996 |
+| Lines of code | **1,470** | 679 | ~584 | **~976** | 2,396 | 996 |
+| Code files | 11 files | 10 files | 11 files | **11 files** | TBD | TBD |
+| ES modules | ❌ (needed fix) | ✅ (correct) | ✅ (correct) | **✅ (correct)** | ❌ (did not work) | ❌ (did not work) |
+| First launch | ❌ (init-order bug) | ✅ Worked | ❌ (did not work) | **✅ Worked** | ❌ (did not work) | ❌ (did not work) |
+| Finish | stop | stop | stop | **stop** | **length** (truncated) | stop |
 
 ### Features Across Implementations
 
