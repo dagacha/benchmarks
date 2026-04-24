@@ -22,8 +22,8 @@ A head-to-head comparison of different models generating a complete vertical spa
 | [`space-shooter-gemma4-run2/`](space-shooter-gemma4-run2/) | **Gemma 4 26B-A4B** (MLX 4-bit) | Mac M1 Max | on | 2m 8s | ~46 | ~584 | TBD | stop |
 | [`space-shooter-gemma4-8bit/`](space-shooter-gemma4-8bit/) | **Gemma 4 26B-A4B** (MLX 8-bit) | Mac M1 Max | on | 2m 19s | ~42.7 | ~976 | **0** | stop |
 | [`space-shooter-mlx-m1max/`](space-shooter-mlx-m1max/) | **Qwen3.6-35B-A3B** (MLX 4-bit) | Mac M1 Max | on | 10m 44s | 43.7 | 2,396 | TBD | length |
-|| [`space-shooter-mlx-m1max-notthinking/`](space-shooter-mlx-m1max-notthinking/) | **Qwen3.6-35B-A3B** (MLX 4-bit) | Mac M1 Max | **off** | **3m 14s** | **50.5** | 996 | TBD | stop |
-|| [`space-shooter-qwen35b-mlx/`](space-shooter-qwen35b-mlx/) | **Qwen3.6-35B-A3B** (MLX 8-bit) | Mac M1 Max | off | 6m 10s | 31.0 | 1,063 | TBD | stop |
+| [`space-shooter-mlx-m1max-notthinking/`](space-shooter-mlx-m1max-notthinking/) | **Qwen3.6-35B-A3B** (MLX 4-bit) | Mac M1 Max | **off** | **3m 14s** | **50.5** | 996 | TBD | stop |
+| [`space-shooter-qwen35b-mlx/`](space-shooter-qwen35b-mlx/) | **Qwen3.6-35B-A3B** (MLX 8-bit) | Mac M1 Max | off | 6m 10s | 31.0 | 1,063 | TBD | stop |
 
 ### Quick Comparison (All Platforms)
 
