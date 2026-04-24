@@ -10,8 +10,8 @@ A head-to-head comparison of different models generating a complete vertical spa
 
 | Run | Model | Hardware | Thinking | Wall time | Decode tok/s | Lines | Fixes | Finish |
 |-----|-------|----------|----------|-----------|--------------|-------|-------|--------|
-| [`space-shooter/`](space-shooter/) | **Qwen3.6-35B-A3B** (llama.cpp GGUF) | Bosgame M5 / Radeon 8060S | on | 5m 18s | ~50 | 1,470 | 2 | stop |
-| [`space-shooter-gemma4/`](space-shooter-gemma4/) | **Gemma 4 26B-A4B** (llama.cpp GGUF) | Bosgame M5 / Radeon 8060S | on | **4m 16s** | 40.1 | 679 | **0** | stop |
+| [`space-shooter/`](space-shooter/) | **Qwen3.6-35B-A3B** (llama.cpp GGUF) | Ryzen AI Max+ 395 / Radeon 8060S | on | 5m 18s | ~50 | 1,470 | 2 | stop |
+| [`space-shooter-gemma4/`](space-shooter-gemma4/) | **Gemma 4 26B-A4B** (llama.cpp GGUF) | Ryzen AI Max+ 395 / Radeon 8060S | on | **4m 16s** | 40.1 | 679 | **0** | stop |
 | [`space-shooter-gemma4-run2/`](space-shooter-gemma4-run2/) | **Gemma 4 26B-A4B** (MLX 4-bit) | MacBook Pro M1 Max 64GB | on | 2m 8s | ~46 | ~584 | TBD | stop |
 | [`space-shooter-gemma4-8bit/`](space-shooter-gemma4-8bit/) | **Gemma 4 26B-A4B** (MLX 8-bit) | Mac (MLX) | on | 2m 19s | ~42.7 | ~976 | **0** | stop |
 | [`space-shooter-mlx-m1max/`](space-shooter-mlx-m1max/) | **Qwen3.6-35B-A3B** (MLX 4-bit) | MacBook Pro M1 Max 64GB | on | 10m 44s | 43.7 | 2,396 | TBD | length |
@@ -19,7 +19,7 @@ A head-to-head comparison of different models generating a complete vertical spa
 
 ### Quick Comparison (All Platforms)
 
-| Metric | Qwen3.6 (GGUF)<br>Bosgame M5 | Gemma 4 Run 1 (GGUF)<br>Bosgame M5 | Gemma 4 Run 2 (MLX)<br>M1 Max | **Gemma 4 (MLX 8-bit)**<br>Mac | Qwen3.6 (MLX)<br>M1 Max<br>thinking on | Qwen3.6 (MLX)<br>M1 Max<br>thinking off |
+| Metric | Qwen3.6 (GGUF)<br>Ryzen AI Max+ 395 | Gemma 4 Run 1 (GGUF)<br>Ryzen AI Max+ 395 | Gemma 4 Run 2 (MLX)<br>M1 Max | **Gemma 4 (MLX 8-bit)**<br>Mac | Qwen3.6 (MLX)<br>M1 Max<br>thinking on | Qwen3.6 (MLX)<br>M1 Max<br>thinking off |
 |--------|---------------------------|-----------------------------------|----------------------------|-------------------------------|--------------------------------------|--------------------------------------|
 | Parameters | 35B (3B active) | 26B (4B active) | 26B (4B active) | **26B (4B active)** | 35B (3B active) | 35B (3B active) |
 | Format | GGUF Q4_K_XL | GGUF Q4_K_XL | MLX 4-bit | **MLX 8-bit** | MLX 4-bit | MLX 4-bit |
@@ -66,7 +66,7 @@ A head-to-head comparison of different models generating a complete vertical spa
 
 | Configuration | Machine | GPU | Backend |
 |-------------|---------|-----|---------|
-| Bosgame M5 | Ryzen AI Max+ 395, 128GB | Radeon 8060S (RDNA 3.5) | llama.cpp b8672 / MLX |
+| Ryzen AI Max+ 395 | Ryzen AI Max+ 395, 128GB | Radeon 8060S (RDNA 3.5) | llama.cpp b8672 / MLX |
 | M1 Max | MacBook Pro, 64GB | M1 Max GPU | MLX |
 
 ### Running the Games
