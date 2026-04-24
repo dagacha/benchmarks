@@ -4,7 +4,6 @@ One-shot generation by Gemma 4 26B-A4B (MLX 4-bit) via local endpoint.
 
 ## Model Details
 - **Model**: unsloth/gemma-4-26b-a4b-it-UD-MLX-4bit
-- **Endpoint**: `[REDACTED]`
 - **Temperature**: 0.7
 - **Max Tokens**: 8000
 - **Generation Speed**: ~46 tok/s

@@ -2,7 +2,6 @@
 
 **Date:** 2026-04-19  
 **Model:** `unsloth/gemma-4-26b-a4b-it-MLX-8bit`  
-**Endpoint:** `[REDACTED]`  
 **Backend:** MLX (Mac)  
 
 ---
