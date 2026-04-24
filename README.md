@@ -66,7 +66,7 @@ A head-to-head comparison of different models generating a complete vertical spa
 
 | Configuration | Machine | GPU | Backend |
 |-------------|---------|-----|---------|
-| Ryzen AI Max+ 395 | Ryzen AI Max+ 395, 128GB | Radeon 8060S (RDNA 3.5) | llama.cpp b8672 / MLX |
+| Ryzen AI Max+ 395 | Ryzen AI Max+ 395, 128GB | Radeon 8060S (RDNA 3.5) | llama.cpp b8672 |
 | M1 Max | MacBook Pro, 64GB | M1 Max GPU | MLX |
 
 ### Running the Games
