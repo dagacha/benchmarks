@@ -52,7 +52,7 @@ Both are initialization-order bugs, not logic errors. All game mechanics, render
 ## Project Structure
 
 ```
-space-shooter/
+space-shooter-qwen3.6-35b/
   index.html              Entry point (single module script import)
   README.md               This file
   css/styles.css          Fullscreen canvas, cursor hidden during play

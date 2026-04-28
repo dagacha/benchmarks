@@ -17,7 +17,7 @@ A head-to-head comparison of different models generating a complete vertical spa
 
 | Run | Model | Hardware | Thinking | Wall time | Decode tok/s | Lines | Fixes | Finish |
 |-----|-------|----------|----------|-----------|--------------|-------|-------|--------|
-| [`space-shooter/`](space-shooter/) | **Qwen3.6-35B-A3B** (llama.cpp GGUF) | Ryzen AI Max+ 395 / Radeon 8060S | on | 5m 18s | ~50 | 1,470 | 2 | stop |
+| [`space-shooter-qwen3.6-35b/`](space-shooter-results/space-shooter-qwen3.6-35b/) | **Qwen3.6-35B-A3B** (llama.cpp GGUF) | Ryzen AI Max+ 395 / Radeon 8060S | on | 5m 18s | ~50 | 1,470 | 2 | stop |
 | [`space-shooter-gemma4/`](space-shooter-gemma4/) | **Gemma 4 26B-A4B** (llama.cpp GGUF) | Ryzen AI Max+ 395 / Radeon 8060S | on | **4m 16s** | 40.1 | 679 | **0** | stop |
 | [`space-shooter-gemma4-run2/`](space-shooter-gemma4-run2/) | **Gemma 4 26B-A4B** (MLX 4-bit) | Mac M1 Max | on | 2m 8s | ~46 | ~584 | TBD | stop |
 | [`space-shooter-gemma4-8bit/`](space-shooter-gemma4-8bit/) | **Gemma 4 26B-A4B** (MLX 8-bit) | Mac M1 Max | on | 2m 19s | ~42.7 | ~976 | **0** | stop |
@@ -145,7 +145,7 @@ See [`coding-tasks/README.md`](coding-tasks/README.md) for detailed results and 
 benchmarks/
 ├── README.md                          # This file
 ├── LICENSE                            # MIT License
-├── space-shooter*/                    # Space shooter implementations
+├── space-shooter-results/space-shooter*/                    # Space shooter implementations
 │   ├── README.md
 │   ├── index.html
 │   ├── css/styles.css
