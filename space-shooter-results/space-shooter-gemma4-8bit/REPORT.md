@@ -97,7 +97,7 @@ The 8-bit version uses ~70% more memory but produces similar output quality and 
 ## Running the Game
 
 ```bash
-cd space-shooter-gemma4-8bit
+cd space-shooter-results/space-shooter-gemma4-8bit
 python3 -m http.server 3001
 ```
 
