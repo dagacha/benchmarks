@@ -19,7 +19,7 @@ A head-to-head comparison of different models generating a complete vertical spa
 | Run | Model | Hardware | Thinking | Wall time | Decode tok/s | Lines | Fixes | Finish |
 |-----|-------|----------|----------|-----------|--------------|-------|-------|--------|
 | [`shooter-gamer-gemma4-31b/`](space-shooter-results/dense/shooter-gamer-gemma4-31b/) | **Gemma 4 31B** | TBD | on | TBD | TBD | TBD | TBD | TBD |
-| [`N/A`](N/A) | **Qwen3.6 27B** | TBD | on | TBD | TBD | TBD | TBD | TBD |
+| [`space-shooter-qwen3.6-27b/`](space-shooter-results/dense/space-shooter-qwen3.6-27b/) | **Qwen3.6 27B** | TBD | on | TBD | TBD | TBD | TBD | TBD |
 
 #### MoE Models
 | Run | Model | Hardware | Thinking | Wall time | Decode tok/s | Lines | Fixes | Finish |
@@ -160,11 +160,14 @@ benchmarks/
 ├── README.md                          # This file
 ├── LICENSE                            # MIT License
 ├── space-shooter-results/             # Space shooter implementations
-│   ├── space-shooter*/
-│   │   ├── README.md
-│   │   ├── index.html
-│   │   ├── css/styles.css
-│   │   └── js/*.js
+│   ├── dense/                           # Dense model implementations
+│   │   └── space-shooter*/
+│   ├── moe/                             # MoE model implementations
+│   │   └── space-shooter*/
+│   │       ├── README.md
+│   │       ├── index.html
+│   │       ├── css/styles.css
+│   │       └── js/*.js
 └── coding-tasks/                      # Coding task benchmarks
     ├── README.md
     ├── shared/

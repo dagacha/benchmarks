@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0D1117;
+  cursor: none;
+}
+
+#gameCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+#startScreen {
+  background: rgba(13, 17, 23, 0.95);
+}
+
+#gameOverScreen {
+  background: rgba(13, 17, 23, 0.9);
+}
+
+#title {
+  font-family: monospace;
+  font-size: 48px;
+  color: #4ECDC4;
+  text-shadow: 0 0 20px #4ECDC4, 0 0 40px #4ECDC4;
+  margin-bottom: 40px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; text-shadow: 0 0 20px #4ECDC4, 0 0 40px #4ECDC4; }
+  50% { opacity: 0.8; text-shadow: 0 0 30px #4ECDC4, 0 0 60px #4ECDC4, 0 0 80px #4ECDC4; }
+}
+
+#enemyPreviews {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+#enemyPreviews canvas {
+  width: 64px;
+  height: 64px;
+}
+
+#startText, #restartText {
+  font-family: monospace;
+  font-size: 24px;
+  color: #f0f6fc;
+  margin-top: 20px;
+  animation: pulse 1.5s ease-in-out infinite;
+  cursor: pointer;
+}
+
+#controlsInfo {
+  margin-top: 40px;
+  font-family: monospace;
+  font-size: 14px;
+  color: #8b949e;
+  text-align: center;
+  line-height: 2;
+}
+
+#gameOverScreen h1 {
+  font-family: monospace;
+  font-size: 48px;
+  color: #ff6b6b;
+  text-shadow: 0 0 20px #ff6b6b;
+  margin-bottom: 30px;
+}
+
+#gameOverScreen p {
+  font-family: monospace;
+  font-size: 20px;
+  color: #f0f6fc;
+  margin: 8px 0;
+}
