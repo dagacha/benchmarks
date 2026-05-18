@@ -57,18 +57,6 @@
 
 Decode speed is slightly below the standalone benchmark figure (47 tok/s) — likely because the benchmark used a warmed-up context while these were cold runs with cache_prompt=false.
 
-### Comparison with other models on this machine
-
-| Model | Prefill | Decode |
-|---|---|---|
-| Gemma 4 26B-A4B (this) | ~870–1,007 tok/s | ~42–47 tok/s |
-| Qwen3.5-35B-A3B | ~25 tok/s | ~57 tok/s |
-| Nemotron-3-Nano-30B-A3B | ~22 tok/s | ~65 tok/s |
-
-Gemma 4's prefill is dramatically faster than the Qwen/Nemotron models (~40× faster). Decode is slower by ~25–35%, likely a trade-off of the architecture or quantization differences.
-
 ---
 
-## Overall Assessment
-
-**Gemma 4 26B-A4B is a capable coding model.** It generated correct, idiomatic Python and caught all planted bugs. The main operational note is the thinking-token behaviour — disable it explicitly if you need efficient token use on tasks that don't require step-by-step reasoning.
+**Note:** For comparison across all models, see the main [README.md](../../README.md).

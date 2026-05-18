@@ -60,27 +60,6 @@ Decode is remarkably consistent at ~65 tok/s — the fastest of the three models
 
 ---
 
-## Three-Way Comparison
+---
 
-| | Nemotron-3-Nano-30B-A3B | Qwen3.5-35B-A3B | Gemma 4 26B-A4B |
-|---|---|---|---|
-| **Task A score** | 16 / 18 ⚠️ | 18 / 18 ✅ | 18 / 18 ✅ |
-| **Task A tokens used** | 670 | 630 | 1,552 |
-| **Task B planted bugs** | 2.5 / 4 ⚠️ | 3 / 4 + bonus 🎁 | 4 / 4 ✅ |
-| **Decode speed** | **~65 tok/s** 🥇 | ~55 tok/s | ~43 tok/s |
-| **Prefill speed** | ~712 tok/s | ~720 tok/s | **~930 tok/s** 🥇 |
-| **Token efficiency** | High | Highest | Lowest |
-| **Reasoning style** | Hidden (like Gemma) | Inline deliberation | Hidden in `reasoning_content` |
-
-### Ranking by Task
-- **Code generation correctness:** Gemma 4 = Qwen3.5 > Nemotron
-- **Debugging accuracy:** Gemma 4 > Qwen3.5 > Nemotron
-- **Speed (decode):** Nemotron > Qwen3.5 > Gemma 4
-- **Speed (prefill):** Gemma 4 > Qwen3.5 ≈ Nemotron
-- **Token efficiency:** Qwen3.5 > Nemotron > Gemma 4
-
-### Key Takeaways
-- **Nemotron is the fastest at decode** but made the most correctness mistakes. Good for throughput-bound tasks where some retries are acceptable.
-- **Qwen3.5 is the most balanced** — fast, concise, and capable of discovering genuine unlisted bugs through visible reasoning.
-- **Gemma 4 is the most thorough debugger** and has the fastest prefill, but is more verbose and slower at decode.
-- None of the three fixed Bug 3 (backoff off-by-one) cleanly without being prompted — this is a genuinely subtle bug that's hard to spot without running the numbers. Gemma hedged, Qwen rejected it for a different real bug, Nemotron accidentally preserved it.
+**Note:** For comparison across all models, see the main [README.md](../../README.md).

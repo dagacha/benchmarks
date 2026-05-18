@@ -55,23 +55,6 @@ Note: short-prompt prefill (~181 tok/s) reflects per-request overhead. At realis
 
 ---
 
-## Qwen3.6 vs Qwen3.5 Head-to-Head
+---
 
-| | Qwen3.6-35B-A3B | Qwen3.5-35B-A3B |
-|---|---|---|
-| **Task A score** | 18 / 18 ✅ | 18 / 18 ✅ |
-| **Task A tokens used** | **292** | 630 |
-| **Task B planted bugs** | 3 / 4 ⚠️ | 3 / 4 ⚠️ |
-| **Task B bonus finding** | ❌ | ✅ `task_done()` on timeout |
-| **Decode speed** | **~57 tok/s** | ~55 tok/s |
-| **Prefill speed** | **~930 tok/s** | ~720 tok/s |
-| **Reasoning verbosity** | Higher (hit token limits) | Lower (completed cleanly) |
-| **Model file size** | 20.82 GB | 22.2 GB |
-
-### Key Takeaways
-- Qwen3.6 is **faster in both prefill (~29% faster) and decode (~4% faster)** than Qwen3.5.
-- Qwen3.6 is **smaller on disk** (20.82 GB vs 22.2 GB) for similar capability.
-- Qwen3.6 is **dramatically more token-efficient** on code generation (292 vs 630 tokens for Task A).
-- Qwen3.6 is **more verbose in reasoning** — Task B required two API calls due to token exhaustion.
-- Both models missed the same backoff bug (Bug 3) and scored identically on debugging (3/4).
-- Qwen3.5 found a real bonus bug that Qwen3.6 dismissed.
+**Note:** For comparison across all models, see the main [README.md](../../README.md).

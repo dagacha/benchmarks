@@ -51,23 +51,6 @@
 
 ---
 
-## Head-to-Head Comparison: Qwen3.5-35B-A3B vs Gemma 4 26B-A4B
+---
 
-| | Qwen3.5-35B-A3B | Gemma 4 26B-A4B |
-|---|---|---|
-| **Task A score** | 18 / 18 ✅ | 18 / 18 ✅ |
-| **Task A tokens used** | 630 | 1,552 |
-| **Task B planted bugs** | 3 / 4 ⚠️ | 4 / 4 ✅ |
-| **Task B bonus finding** | ✅ found real unlisted bug | ❌ none |
-| **Decode speed** | ~54–56 tok/s | ~42–47 tok/s |
-| **Prefill speed** | ~591–825 tok/s | ~867–1,007 tok/s |
-| **Reasoning visibility** | Inline (with `enable_thinking=false`) | Hidden in `reasoning_content` |
-| **Token efficiency** | Higher (less verbose) | Lower (more verbose) |
-
-### Key Takeaways
-- Both models produce correct, production-quality Python code.
-- **Qwen is more token-efficient** — same quality in roughly 40% of the tokens.
-- **Qwen decodes ~25% faster** (~55 vs ~44 tok/s), making it better for interactive use.
-- **Gemma prefills faster** (~900 vs ~700 tok/s) — edge for long-prompt / RAG workloads.
-- **Gemma found all planted bugs; Qwen found 3/4 but surfaced a real bonus bug** — different failure modes, both useful.
-- **Thinking mode** must be explicitly disabled (`chat_template_kwargs: {enable_thinking: false}`) on both models or the entire token budget goes to silent reasoning with no visible output.
+**Note:** For comparison across all models, see the main [README.md](../../README.md).
