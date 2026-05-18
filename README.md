@@ -15,15 +15,22 @@ A head-to-head comparison of different models generating a complete vertical spa
 
 ### Implementations
 
+#### Dense Models
 | Run | Model | Hardware | Thinking | Wall time | Decode tok/s | Lines | Fixes | Finish |
 |-----|-------|----------|----------|-----------|--------------|-------|-------|--------|
-| [`space-shooter/`](space-shooter-results/space-shooter/) | **Qwen3.6-35B-A3B** (llama.cpp GGUF) | Ryzen AI Max+ 395 / Radeon 8060S | on | 5m 18s | ~50 | 1,470 | 2 | stop |
-| [`space-shooter-gemma4/`](space-shooter-results/space-shooter-gemma4/) | **Gemma 4 26B-A4B** (llama.cpp GGUF) | Ryzen AI Max+ 395 / Radeon 8060S | on | **4m 16s** | 40.1 | 679 | **0** | stop |
-| [`space-shooter-gemma4-run2/`](space-shooter-results/space-shooter-gemma4-run2/) | **Gemma 4 26B-A4B** (MLX 4-bit) | Mac M1 Max | on | 2m 8s | ~46 | ~584 | TBD | stop |
-| [`space-shooter-gemma4-8bit/`](space-shooter-results/space-shooter-gemma4-8bit/) | **Gemma 4 26B-A4B** (MLX 8-bit) | Mac M1 Max | on | 2m 19s | ~42.7 | ~976 | **0** | stop |
-| [`space-shooter-mlx-m1max/`](space-shooter-results/space-shooter-mlx-m1max/) | **Qwen3.6-35B-A3B** (MLX 4-bit) | Mac M1 Max | on | 10m 44s | 43.7 | 2,396 | TBD | length |
-| [`space-shooter-mlx-m1max-notthinking/`](space-shooter-results/space-shooter-mlx-m1max-notthinking/) | **Qwen3.6-35B-A3B** (MLX 4-bit) | Mac M1 Max | **off** | **3m 14s** | **50.5** | 996 | TBD | stop |
-| [`space-shooter-qwen35b-mlx/`](space-shooter-results/space-shooter-qwen35b-mlx/) | **Qwen3.6-35B-A3B** (MLX 8-bit) | Mac M1 Max | off | 6m 10s | 31.0 | 1,063 | TBD | stop |
+| [`shooter-gamer-gemma4-31b/`](space-shooter-results/dense/shooter-gamer-gemma4-31b/) | **Gemma 4 31B** | TBD | on | TBD | TBD | TBD | TBD | TBD |
+| [`N/A`](N/A) | **Qwen3.6 27B** | TBD | on | TBD | TBD | TBD | TBD | TBD |
+
+#### MoE Models
+| Run | Model | Hardware | Thinking | Wall time | Decode tok/s | Lines | Fixes | Finish |
+|-----|-------|----------|----------|-----------|--------------|-------|-------|--------|
+| [`space-shooter/`](space-shooter-results/moe/space-shooter/) | **Qwen3.6-35B-A3B** (llama.cpp GGUF) | Ryzen AI Max+ 395 / Radeon 8060S | on | 5m 18s | ~50 | 1,470 | 2 | stop |
+| [`space-shooter-gemma4/`](space-shooter-results/moe/space-shooter-gemma4/) | **Gemma 4 26B-A4B** (llama.cpp GGUF) | Ryzen AI Max+ 395 / Radeon 8060S | on | **4m 16s** | 40.1 | 679 | **0** | stop |
+| [`space-shooter-gemma4-run2/`](space-shooter-results/moe/space-shooter-gemma4-run2/) | **Gemma 4 26B-A4B** (MLX 4-bit) | Mac M1 Max | on | 2m 8s | ~46 | ~584 | TBD | stop |
+| [`space-shooter-gemma4-8bit/`](space-shooter-results/moe/space-shooter-gemma4-8bit/) | **Gemma 4 26B-A4B** (MLX 8-bit) | Mac M1 Max | on | 2m 19s | ~42.7 | ~976 | **0** | stop |
+| [`space-shooter-mlx-m1max/`](space-shooter-results/moe/space-shooter-mlx-m1max/) | **Qwen3.6-35B-A3B** (MLX 4-bit) | Mac M1 Max | on | 10m 44s | 43.7 | 2,396 | TBD | length |
+| [`space-shooter-mlx-m1max-notthinking/`](space-shooter-results/moe/space-shooter-mlx-m1max-notthinking/) | **Qwen3.6-35B-A3B** (MLX 4-bit) | Mac M1 Max | **off** | **3m 14s** | **50.5** | 996 | TBD | stop |
+| [`space-shooter-qwen35b-mlx/`](space-shooter-results/moe/space-shooter-qwen35b-mlx/) | **Qwen3.6-35B-A3B** (MLX 8-bit) | Mac M1 Max | off | 6m 10s | 31.0 | 1,063 | TBD | stop |
 
 ### Quick Comparison (All Platforms)
 
@@ -82,7 +89,7 @@ A head-to-head comparison of different models generating a complete vertical spa
 Each implementation is self-contained. Navigate to the folder and start a local server:
 
 ```bash
-cd space-shooter-results/space-shooter-gemma4/
+cd space-shooter-results/moe/space-shooter-gemma4/
 python -m http.server 3001
 ```
 
@@ -105,7 +112,7 @@ See [LICENSE](LICENSE)
 
 ## Coding Tasks Benchmarks
 
-Benchmarks of local MoE models on real-world coding tasks.
+Benchmarks of local models on real-world coding tasks.
 
 ### Tasks
 
@@ -114,6 +121,13 @@ Benchmarks of local MoE models on real-world coding tasks.
 
 ### Results
 
+#### Dense Models
+| Model | Task A | Task B | Decode | Prefill |
+|---|---|---|---|---|
+| **Gemma 4 31B** | TBD | TBD | TBD | TBD |
+| **Qwen3.6 27B** | TBD | TBD | TBD | TBD |
+
+#### MoE Models
 | Model | Task A | Task B | Decode | Prefill |
 |---|---|---|---|---|
 | **Gemma 4 26B-A4B** | 18/18 ✅ | 4/4 ✅ | ~43 tok/s | ~930 tok/s |
@@ -164,7 +178,7 @@ benchmarks/
 ### Space Shooter Games
 
 ```bash
-cd space-shooter-results/space-shooter-gemma4/
+cd space-shooter-results/moe/space-shooter-gemma4/
 python3 -m http.server 3001
 # Open http://localhost:3001
 ```
