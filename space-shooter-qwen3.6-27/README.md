@@ -5,7 +5,6 @@ A space shooter game where you battle pixelated octopus aliens invading from dee
 ## How to Run
 
 ```bash
-cd space-shooter
 python3 -m http.server 3001
 ```
 
