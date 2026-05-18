@@ -15,6 +15,13 @@ A head-to-head comparison of different models generating a complete vertical spa
 
 ### Implementations
 
+#### Dense Models
+| Run | Model | Hardware | Thinking | Wall time | Decode tok/s | Lines | Fixes | Finish |
+|-----|-------|----------|----------|-----------|--------------|-------|-------|--------|
+| `N/A` | **Gemma 4 31B** | TBD | on | TBD | TBD | TBD | TBD | TBD |
+| `N/A` | **Qwen3.6 27B** | TBD | on | TBD | TBD | TBD | TBD | TBD |
+
+#### MoE Models
 | Run | Model | Hardware | Thinking | Wall time | Decode tok/s | Lines | Fixes | Finish |
 |-----|-------|----------|----------|-----------|--------------|-------|-------|--------|
 | [`space-shooter/`](space-shooter-results/space-shooter/) | **Qwen3.6-35B-A3B** (llama.cpp GGUF) | Ryzen AI Max+ 395 / Radeon 8060S | on | 5m 18s | ~50 | 1,470 | 2 | stop |
@@ -105,7 +112,7 @@ See [LICENSE](LICENSE)
 
 ## Coding Tasks Benchmarks
 
-Benchmarks of local MoE models on real-world coding tasks.
+Benchmarks of local models on real-world coding tasks.
 
 ### Tasks
 
@@ -114,6 +121,13 @@ Benchmarks of local MoE models on real-world coding tasks.
 
 ### Results
 
+#### Dense Models
+| Model | Task A | Task B | Decode | Prefill |
+|---|---|---|---|---|
+| **Gemma 4 31B** | TBD | TBD | TBD | TBD |
+| **Qwen3.6 27B** | TBD | TBD | TBD | TBD |
+
+#### MoE Models
 | Model | Task A | Task B | Decode | Prefill |
 |---|---|---|---|---|
 | **Gemma 4 26B-A4B** | 18/18 ✅ | 4/4 ✅ | ~43 tok/s | ~930 tok/s |
