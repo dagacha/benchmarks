@@ -83,10 +83,10 @@ Each implementation is self-contained. Navigate to the folder and start a local 
 
 ```bash
 cd space-shooter-results/space-shooter-gemma4/
-python -m http.server 3002
+python -m http.server 3001
 ```
 
-Then open **http://localhost:3002** in your browser. A static server is required because ES modules cannot be loaded from `file://` URLs.
+Then open **http://localhost:3001** in your browser. A static server is required because ES modules cannot be loaded from `file://` URLs.
 
 ### Controls
 
