@@ -18,8 +18,8 @@ A head-to-head comparison of different models generating a complete vertical spa
 #### Dense Models
 | Run | Model | Hardware | Thinking | Wall time | Decode tok/s | Lines | Fixes | Finish |
 |-----|-------|----------|----------|-----------|--------------|-------|-------|--------|
-| `N/A` | **Gemma 4 31B** | TBD | on | TBD | TBD | TBD | TBD | TBD |
-| `N/A` | **Qwen3.6 27B** | TBD | on | TBD | TBD | TBD | TBD | TBD |
+| [`shooter-gamer-gemma4-31b/`](space-shooter-results/dense/shooter-gamer-gemma4-31b/) | **Gemma 4 31B** | TBD | on | TBD | TBD | TBD | TBD | TBD |
+| [`N/A`](N/A) | **Qwen3.6 27B** | TBD | on | TBD | TBD | TBD | TBD | TBD |
 
 #### MoE Models
 | Run | Model | Hardware | Thinking | Wall time | Decode tok/s | Lines | Fixes | Finish |
