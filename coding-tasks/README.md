@@ -102,6 +102,8 @@ benchmarks/coding-tasks/
 │   ├── task_a.md, task_b.md
 │   ├── task_b_analysis.md, task_b_full_output.md
 │   └── report.md
+├── gemma-4-26B-A4B-local-endpoint/        (variant run via local MLX endpoint)
+│   └── report-local-endpoint.md
 ├── qwen3.5-35B-A3B/
 │   ├── task_a.md, task_b.md, report.md
 ├── qwen3.6-35B-A3B/
