@@ -1,8 +1,13 @@
 """
 Test suite for the model-generated LRU cache.
-Writes model code to lru_generated.py then imports and runs tests.
+Loads <model_folder>/lru_generated.py and runs the tests.
+
+Usage:
+    python3 shared/test_lru.py [model_folder]
+
+Defaults to gemma-4-26B-A4B when no folder is given.
 """
-import sys, importlib, threading, time, traceback
+import sys, importlib.util, threading, time, traceback
 
 PASS = []
 FAIL = []
@@ -97,11 +102,18 @@ def run(module):
     return len(FAIL) == 0
 
 if __name__ == "__main__":
-    try:
-        mod = importlib.import_module("lru_generated")
-    except ModuleNotFoundError:
-        print("ERROR: lru_generated.py not found — place model output there first")
+    from pathlib import Path
+
+    model_folder = sys.argv[1] if len(sys.argv) > 1 else "gemma-4-26B-A4B"
+    root = Path(__file__).resolve().parent.parent
+    src = root / model_folder / "lru_generated.py"
+    if not src.exists():
+        print(f"ERROR: {src} not found — pass a model folder containing lru_generated.py")
         sys.exit(1)
+    try:
+        spec = importlib.util.spec_from_file_location("lru_generated", src)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
     except SyntaxError as e:
         print(f"SYNTAX ERROR in generated code: {e}")
         sys.exit(1)
