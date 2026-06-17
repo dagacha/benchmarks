@@ -42,11 +42,11 @@ A head-to-head comparison of different models generating a complete vertical spa
 | Model config | temp=0.3 | temp=1.0/0.3 | temp=0.7 | **temp=0.7** | temp=0.3 | temp=0.3 | **temp=0.3** |
 | Wall time | 5 min 18 s | **4 min 16 s** | 2m 8s | **2m 19s** | 10 min 44 s | **3 min 14 s** | **6 min 10 s** |
 | Decode tok/s | ~50 | 40.1 | ~46 | **~42.7** | 43.7 | **50.5** | **31.0** |
-| Output tokens | 16,083 | 10,132 | ~5,755 | **5,751** | 2,396 | 996 | **9,581** |
+| Output tokens | 16,083 | 10,132 | ~5,755 | **5,751** | 28,000 | 9,526 | **9,581** |
 | Lines of code | **1,470** | 679 | ~584 | **~976** | 2,396 | 996 | **1,063** |
-| Code files | 11 files | 10 files | 11 files | **11 files** | TBD | TBD | **11 files** |
-| ES modules | ❌ (needed fix) | ✅ (correct) | ✅ (correct) | **✅ (correct)** | ❌ (did not work) | ❌ (did not work) | **✅ (correct)** |
-| First launch | ❌ (init-order bug) | ✅ Worked | ❌ (did not work) | **✅ Worked** | ❌ (did not work) | ❌ (did not work) | **❌ Crashed** |
+| Code files | 11 files | 10 files | 11 files | **11 files** | 10 files | 10 files | **11 files** |
+| ES modules | ❌ (fixed post-gen) | ✅ correct | — (not used) | **— (not used)** | — (not used) | — (not used) | **— (not used)** |
+| First launch | ❌ (init-order bug) | ✅ Worked | ❓ untested | **✅ Worked** | ❓ untested | ❓ untested | **❓ untested** |
 | Finish | stop | stop | stop | **stop** | **length** (truncated) | stop | **stop** |
 
 ### Features Across Implementations
@@ -60,22 +60,20 @@ A head-to-head comparison of different models generating a complete vertical spa
 - Circle-to-circle collision detection
 - Mouse control with smooth tracking
 - Click to fire weapons
+- Screen flash on damage
+- Unleash / combo meter (Qwen3.6 and Gemma 4 runs)
 
 **Unique to Qwen3.6:**
-- Homing missiles
 - Multi-phase boss health bars
 - Chromatic aberration effects
-- Screen flash on damage
-- Ink barrage attacks
-- Damage numbers
-- Powerup pickups with aura
-- Combo system with 3x score multiplier (Unleash mode)
+- Floating damage numbers
 
 **Unique to Gemma 4:**
-- Cleaner, more compact code base
-- Working immediately with zero manual fixes
-- Correct ES module usage from the start
-- Mouse-reactive parallax depth
+- Cleaner, more compact code base (fewest lines per feature)
+- Working immediately with zero manual fixes (GGUF run)
+- Correct ES module usage from the start (GGUF run)
+
+> Feature assignments above are based on code inspection of each run (`grep` for feature signatures across `js/`). Several previously-listed "unique" features were found in both model families and have been moved or removed; see commit history for details.
 
 ### Hardware Used
 
