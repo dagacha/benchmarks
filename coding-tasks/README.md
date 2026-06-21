@@ -98,7 +98,10 @@ benchmarks/coding-tasks/
 │   ├── test_lru.py                        (18-test harness for Task A)
 │   └── buggy_queue.py                     (Task B input with planted bugs)
 ├── gemma-4-26B-A4B/
-│   ├── task_a.md, task_b.md, report.md
+│   ├── lru_generated.py                   (generated LRU cache, imported by test_lru.py)
+│   ├── task_a.md, task_b.md
+│   ├── task_b_analysis.md, task_b_full_output.md
+│   └── report.md
 ├── qwen3.5-35B-A3B/
 │   ├── task_a.md, task_b.md, report.md
 ├── qwen3.6-35B-A3B/

@@ -158,7 +158,7 @@ See [`coding-tasks/README.md`](coding-tasks/README.md) for detailed results and 
 ```
 benchmarks/
 ├── README.md                          # This file
-├── LICENSE                            # MIT License
+├── LICENSE                            # Apache License 2.0
 ├── space-shooter-results/             # Space shooter implementations
 │   ├── dense/                           # Dense model implementations
 │   │   └── space-shooter*/
@@ -190,7 +190,7 @@ python3 -m http.server 3001
 
 ```bash
 cd coding-tasks
-python3 shared/test_lru.py  # Run LRU cache tests
+python3 shared/test_lru.py gemma-4-26B-A4B  # Run LRU cache tests for a model
 ```
 
 ---
@@ -206,7 +206,7 @@ python3 shared/test_lru.py  # Run LRU cache tests
 
 ## License
 
-MIT License - See [LICENSE](LICENSE)
+Apache License 2.0 - See [LICENSE](LICENSE)
 
 ---
 
